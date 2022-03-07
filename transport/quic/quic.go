@@ -47,7 +47,7 @@ func (q *quicSocket) Send(m *transport.Message) error {
 }
 
 func (q *quicSocket) Close() error {
-	return q.s.Close()
+	return q.s.CloseWithError(0, "EOF")
 }
 
 func (q *quicSocket) Local() string {
